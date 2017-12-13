@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E7E11491FE1C2DF0008A8A2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7E11461FE1C2D80008A8A2 /* Charts.framework */; };
+		5E7E114A1FE1C2DF0008A8A2 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7E11461FE1C2D80008A8A2 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EFD4A521FE02EFD00C294B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A511FE02EFD00C294B4 /* AppDelegate.swift */; };
 		5EFD4A571FE02EFD00C294B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A551FE02EFD00C294B4 /* Main.storyboard */; };
 		5EFD4A591FE02EFD00C294B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A581FE02EFD00C294B4 /* Assets.xcassets */; };
@@ -33,39 +35,37 @@
 		5EFD4AC21FE1AE9400C294B4 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB91FE1708100C294B4 /* Authentication.swift */; };
 		5EFD4AC31FE1AEA000C294B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AC01FE1A5DD00C294B4 /* Constants.swift */; };
 		5EFD4AC51FE1B88200C294B4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AC41FE1B88200C294B4 /* Readme.md */; };
-		5EFD4AC61FE1BC7C00C294B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4AA41FE1058B00C294B4 /* Charts.framework */; };
-		5EFD4AC71FE1BC7C00C294B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4AA41FE1058B00C294B4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EFD4ACB1FE1BC8B00C294B4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A721FE0306E00C294B4 /* CryptoSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5E7E11451FE1C2D80008A8A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E7E11401FE1C2D80008A8A2 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		5E7E11471FE1C2D80008A8A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E7E11401FE1C2D80008A8A2 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		5E7E114B1FE1C2DF0008A8A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E7E11401FE1C2D80008A8A2 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
+		};
 		5EFD4A631FE02EFD00C294B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5EFD4A461FE02EFD00C294B4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5EFD4A4D1FE02EFD00C294B4;
 			remoteInfo = BTCIndex;
-		};
-		5EFD4AA31FE1058B00C294B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		5EFD4AA51FE1058B00C294B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
-		};
-		5EFD4AC81FE1BC7C00C294B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A58A4ED274A941CA248EA921;
-			remoteInfo = Charts;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -76,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5EFD4AC71FE1BC7C00C294B4 /* Charts.framework in Embed Frameworks */,
+				5E7E114A1FE1C2DF0008A8A2 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E7E11401FE1C2D80008A8A2 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		5EFD4A4E1FE02EFD00C294B4 /* BTCIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTCIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFD4A511FE02EFD00C294B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EFD4A561FE02EFD00C294B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		5EFD4A831FE04E2100C294B4 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		5EFD4A981FE0F60400C294B4 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		5EFD4A9A1FE104B800C294B4 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
-		5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		5EFD4AA81FE1109700C294B4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
 		5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EFD4ACB1FE1BC8B00C294B4 /* CryptoSwift.framework in Frameworks */,
-				5EFD4AC61FE1BC7C00C294B4 /* Charts.framework in Frameworks */,
+				5E7E11491FE1C2DF0008A8A2 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,10 +137,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E7E11411FE1C2D80008A8A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E11461FE1C2D80008A8A2 /* Charts.framework */,
+				5E7E11481FE1C2D80008A8A2 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5EFD4A451FE02EFD00C294B4 = {
 			isa = PBXGroup;
 			children = (
-				5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */,
+				5E7E11401FE1C2D80008A8A2 /* Charts.xcodeproj */,
 				5EFD4A501FE02EFD00C294B4 /* BTCIndex */,
 				5EFD4A651FE02EFD00C294B4 /* BTCIndexTests */,
 				5EFD4A4F1FE02EFD00C294B4 /* Products */,
@@ -254,15 +263,6 @@
 			path = "Chart View";
 			sourceTree = "<group>";
 		};
-		5EFD4A9F1FE1058A00C294B4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5EFD4AA41FE1058B00C294B4 /* Charts.framework */,
-				5EFD4AA61FE1058B00C294B4 /* ChartsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5EFD4AA71FE1109200C294B4 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +307,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5EFD4AC91FE1BC7C00C294B4 /* PBXTargetDependency */,
+				5E7E114C1FE1C2DF0008A8A2 /* PBXTargetDependency */,
 			);
 			name = BTCIndex;
 			productName = BTCIndex;
@@ -370,8 +370,8 @@
 					ProjectRef = 5EFD4A741FE030A300C294B4 /* BTCIndex.xcodeproj */;
 				},
 				{
-					ProductGroup = 5EFD4A9F1FE1058A00C294B4 /* Products */;
-					ProjectRef = 5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */;
+					ProductGroup = 5E7E11411FE1C2D80008A8A2 /* Products */;
+					ProjectRef = 5E7E11401FE1C2D80008A8A2 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -383,18 +383,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5EFD4AA41FE1058B00C294B4 /* Charts.framework */ = {
+		5E7E11461FE1C2D80008A8A2 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = 5EFD4AA31FE1058B00C294B4 /* PBXContainerItemProxy */;
+			remoteRef = 5E7E11451FE1C2D80008A8A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5EFD4AA61FE1058B00C294B4 /* ChartsTests.xctest */ = {
+		5E7E11481FE1C2D80008A8A2 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = 5EFD4AA51FE1058B00C294B4 /* PBXContainerItemProxy */;
+			remoteRef = 5E7E11471FE1C2D80008A8A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -437,7 +437,6 @@
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Charts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -479,15 +478,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5E7E114C1FE1C2DF0008A8A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 5E7E114B1FE1C2DF0008A8A2 /* PBXContainerItemProxy */;
+		};
 		5EFD4A641FE02EFD00C294B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5EFD4A4D1FE02EFD00C294B4 /* BTCIndex */;
 			targetProxy = 5EFD4A631FE02EFD00C294B4 /* PBXContainerItemProxy */;
-		};
-		5EFD4AC91FE1BC7C00C294B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = 5EFD4AC81FE1BC7C00C294B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
