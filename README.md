@@ -8,7 +8,7 @@ Basic useful feature list:
  * Toggle historical data b/w daily, monthly and all-time prices
 
 <br>
-API used: :+1:
+API's used: :+1:
 <br>
 
 ```
@@ -18,7 +18,6 @@ API used: :+1:
 ```
 <br>
 **Dependencies:**
-
  Used Carthage to manage the dependencies. 
  
  Libraries used: :+1:
@@ -26,24 +25,22 @@ API used: :+1:
  * [Charts](https://github.com/danielgindi/Charts) for plotting the line chart
  * [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift/) for computing the HMAC digest needed for API authentication
  
-<br>
-**Fonts**
+#### Fonts
 * Quicksand - Bold/Medium/Regular
 
-<br>
-**Testing**
+#### Testing
 * Added unit tests for Controllers 
 * Mock test for Network manager
 
-<br>
-**Supported Screen Sizes**
+
+#### Supported Screen Sizes
 * iPhoneX
 * iPhone 8 Plus
 * iPhone 8
 * iPhone SE
 
-<br>
-**Errors**
+
+#### Errors
 
 Compille Errors due to ````Charts module```` 
 ````
