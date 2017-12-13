@@ -9,23 +9,23 @@ Basic useful feature list:
 
 <br>
 API used: :+1:
+<br>
+
 ```
  * End point -> https://apiv2.bitcoinaverage.com 
  * Price Indices -> https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD
  * Historical Data -> https://apiv2.bitcoinaverage.com/indices/global/history/BTCUSD?period=daily&?format=json
 ```
 <br>
+**Dependencies:**
 
-
-#### **Dependencies:**
-
-  **Carthage** to manage the dependencies. 
+ Used Carthage to manage the dependencies. 
  
  Libraries used: :+1:
 
  * [Charts](https://github.com/danielgindi/Charts) for plotting the line chart
  * [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift/) for computing the HMAC digest needed for API authentication
-
+ 
 <br>
 **Fonts**
 * Quicksand - Bold/Medium/Regular
@@ -50,9 +50,5 @@ Compille Errors due to ````Charts module````
 1. Drag the Charts.xcodeproj to your project
 2. Go to your target's settings, hit the "+" under the "Embedded Binaries" section, and select the Charts.framework
 ````
-
-<br>
-
-This is [on GitHub](https://github.com/sree127/btcindex)
 
  
