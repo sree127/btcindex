@@ -10,17 +10,50 @@ import XCTest
 
 @testable import BTCIndex
 
-private class MockNetworkManager: NetworkManager {
-    var getResult: NetworkManager.completion?
+class MockURLSession: URLSessionProtocol {
+    var nextDataTask = MockURLSessionDataTask()
+    private (set) var lastURL: URL?
+    
+    func dataTaskWithURLRequest(urlRequest: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
+        lastURL = urlRequest.url
+        return nextDataTask
+    }
+}
+
+class MockURLSessionDataTask: URLSessionDataTaskProtocol {
+    private (set) var resumeWasCalled = false
+    func resume() {
+        resumeWasCalled = true
+    }
 }
 
 class NetworkManagerTests: XCTestCase {
     
- 
+    var networkManager: NetworkManager!
+    let session = MockURLSession()
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        networkManager = NetworkManager(session: session, url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!, isHeaderRequired: false)
+    }
+    
+    func test_GET_RequestsTheURL() {
+        let url = URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!
+        
+        networkManager.get { (_, _) in
+            
+        }
+        XCTAssert(session.lastURL == url)
+    }
+    
+    func test_GET_StartsTheRequest() {
+        let dataTask = MockURLSessionDataTask()
+        session.nextDataTask = dataTask
+        
+        networkManager.get { (_, _) in
+            
+        }
+        XCTAssert(dataTask.resumeWasCalled)
     }
     
     

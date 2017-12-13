@@ -9,13 +9,30 @@
 import Foundation
 import CryptoSwift
 
+typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
+
+protocol URLSessionProtocol {
+    func dataTaskWithURLRequest(urlRequest: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
+}
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+extension URLSessionDataTask: URLSessionDataTaskProtocol { }
+
+extension URLSession: URLSessionProtocol {
+    func dataTaskWithURLRequest(urlRequest: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
+        return dataTask(with: urlRequest, completionHandler: completionHandler) as URLSessionDataTaskProtocol
+    }
+}
+
 class NetworkManager {
     
     typealias completion = (_ data: Data?, _ error: Error?) -> ()
-    private let session: URLSession
+    private let session: URLSessionProtocol
     private let url: URL
     private let isHeaderRequired: Bool
-    init(session: URLSession, url: URL, isHeaderRequired: Bool) {
+    
+    init(session: URLSessionProtocol = URLSession.shared, url: URL, isHeaderRequired: Bool) {
         self.session = session
         self.url = url
         self.isHeaderRequired = isHeaderRequired
@@ -58,7 +75,7 @@ class NetworkManager {
     }
 
     func get(callback: @escaping completion) {
-        let task = session.dataTask(with: urlRequest) { (data, _, error) in
+        let task = session.dataTaskWithURLRequest(urlRequest: urlRequest) { (data, _, error) in
             switch (data, error) {
             case (_, let error?):
                 print("Error **", error.localizedDescription)

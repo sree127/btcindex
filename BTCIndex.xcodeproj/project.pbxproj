@@ -11,7 +11,6 @@
 		5EFD4A571FE02EFD00C294B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A551FE02EFD00C294B4 /* Main.storyboard */; };
 		5EFD4A591FE02EFD00C294B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A581FE02EFD00C294B4 /* Assets.xcassets */; };
 		5EFD4A5C1FE02EFD00C294B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A5A1FE02EFD00C294B4 /* LaunchScreen.storyboard */; };
-		5EFD4A671FE02EFD00C294B4 /* BTCIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A661FE02EFD00C294B4 /* BTCIndexTests.swift */; };
 		5EFD4A731FE0306E00C294B4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A721FE0306E00C294B4 /* CryptoSwift.framework */; };
 		5EFD4A7E1FE035F700C294B4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A7D1FE035F700C294B4 /* DashboardViewController.swift */; };
 		5EFD4A801FE037B000C294B4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A7F1FE037B000C294B4 /* NetworkManager.swift */; };
@@ -25,6 +24,7 @@
 		5EFD4A9D1FE1052300C294B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A9A1FE104B800C294B4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EFD4AA91FE1109700C294B4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AA81FE1109700C294B4 /* Router.swift */; };
 		5EFD4AAB1FE144F700C294B4 /* LineChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */; };
+		5EFD4AAD1FE166AC00C294B4 /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,6 @@
 		5EFD4A5B1FE02EFD00C294B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EFD4A5D1FE02EFD00C294B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EFD4A621FE02EFD00C294B4 /* BTCIndexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTCIndexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EFD4A661FE02EFD00C294B4 /* BTCIndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTCIndexTests.swift; sourceTree = "<group>"; };
 		5EFD4A681FE02EFD00C294B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EFD4A721FE0306E00C294B4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		5EFD4A741FE030A300C294B4 /* BTCIndex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BTCIndex.xcodeproj; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		5EFD4AA81FE1109700C294B4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
+		5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +152,10 @@
 		5EFD4A651FE02EFD00C294B4 /* BTCIndexTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EFD4A661FE02EFD00C294B4 /* BTCIndexTests.swift */,
 				5EFD4A681FE02EFD00C294B4 /* Info.plist */,
 				5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */,
 				5EFD4A831FE04E2100C294B4 /* NetworkManagerTests.swift */,
+				5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */,
 			);
 			path = BTCIndexTests;
 			sourceTree = "<group>";
@@ -413,8 +413,8 @@
 			files = (
 				5EFD4AAB1FE144F700C294B4 /* LineChartTests.swift in Sources */,
 				5EFD4A851FE05B9900C294B4 /* NetworkManager.swift in Sources */,
+				5EFD4AAD1FE166AC00C294B4 /* DashboardTests.swift in Sources */,
 				5EFD4A841FE04E2100C294B4 /* NetworkManagerTests.swift in Sources */,
-				5EFD4A671FE02EFD00C294B4 /* BTCIndexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
