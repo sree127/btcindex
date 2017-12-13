@@ -51,9 +51,9 @@ Compille Errors due to ````Charts module````
 
 #### Screenshots
 
-![Initial](https://github.com/sree127/screenshots/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202017-12-14%20at%2001.31.51.png =320/568)
+![Initial](https://github.com/sree127/screenshots/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202017-12-14%20at%2001.31.51.png)
 
-![value selector](https://github.com/sree127/screenshots/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202017-12-14%20at%2001.31.51.png =320/568)
+![value selector](https://github.com/sree127/screenshots/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202017-12-14%20at%2001.31.51.png)
 
 
 
