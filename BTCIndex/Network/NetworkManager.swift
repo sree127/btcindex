@@ -38,38 +38,13 @@ class NetworkManager {
         self.isHeaderRequired = isHeaderRequired
     }
     
-    private var timeStamp: Int {
-        return Int(Date().timeIntervalSince1970)
-    }
-    
-    private var publicKey: String {
-        return "OWE3YzJkMzlhNGIxNDllYzk1NWYwMDE1NzQ2NWM2ZTU"
-    }
-    
-    private var secretKey: String {
-        return "MmY2YTU2YTY3NDljNDFiOTkzYzY1ODY0MWQ4MzRiNTQwNjhiNTVmZDYyYTg0ZjljYWRjMWE1NGNkNjljYTViZA  "
-    }
-    
-    private var payload: String {
-        return String(timeStamp) + "." + publicKey
-    }
-    
-    private var digest: String {
-        let hmac: Array<UInt8> = try! HMAC(key: secretKey, variant: .sha256).authenticate([UInt8](payload.utf8))
-        return hmac.toHexString()
-    }
-    
-    private var signatureHeader: String {
-        return payload + "." + digest
-    }
-    
     private var urlRequest: URLRequest {
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
         if isHeaderRequired {
-            request.setValue(signatureHeader, forHTTPHeaderField: "X-signature")
+            request.setValue(Authentication().signatureHeader, forHTTPHeaderField: "X-signature")
         }
         return request
     }

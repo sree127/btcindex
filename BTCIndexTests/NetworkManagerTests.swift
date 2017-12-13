@@ -37,7 +37,7 @@ class NetworkManagerTests: XCTestCase {
         networkManager = NetworkManager(session: session, url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!, isHeaderRequired: false)
     }
     
-    func test_GET_RequestsTheURL() {
+    func testRequestsTheURL() {
         let url = URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!
         
         networkManager.get { (_, _) in
@@ -46,7 +46,7 @@ class NetworkManagerTests: XCTestCase {
         XCTAssert(session.lastURL == url)
     }
     
-    func test_GET_StartsTheRequest() {
+    func testStartsTheRequest() {
         let dataTask = MockURLSessionDataTask()
         session.nextDataTask = dataTask
         
@@ -54,6 +54,14 @@ class NetworkManagerTests: XCTestCase {
             
         }
         XCTAssert(dataTask.resumeWasCalled)
+    }
+    
+    func testPublicAndPrivateKey() {
+        let publicKey = "OWE3YzJkMzlhNGIxNDllYzk1NWYwMDE1NzQ2NWM2ZTU"
+        XCTAssertEqual(publicKey, networkManager.publicKey)
+        
+        let privateKey = "MmY2YTU2YTY3NDljNDFiOTkzYzY1ODY0MWQ4MzRiNTQwNjhiNTVmZDYyYTg0ZjljYWRjMWE1NGNkNjljYTViZA"
+        XCTAssertEqual(privateKey, networkManager.secretKey)
     }
     
     

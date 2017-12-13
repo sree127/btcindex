@@ -31,6 +31,8 @@ class ChartView: ChartViewDelegate {
         chartView.animate(xAxisDuration: 2.5)
         chartView.drawGridBackgroundEnabled = false
         chartView.minOffset = 0
+        chartView.noDataFont = UIFont(name: "Quicksand-Medium", size: 15)!
+        chartView.noDataTextColor = UIColor.white.withAlphaComponent(0.5)
         
         let leftAxis = chartView.leftAxis
         leftAxis.enabled = false
@@ -44,6 +46,16 @@ class ChartView: ChartViewDelegate {
         rightAxis.drawGridLinesEnabled = false
         rightAxis.axisLineColor = .clear
 
+        /// Add Marker
+        let marker = BalloonMarker(color: ChartColorTemplates.colorFromString("#3f5378"),
+                                   font: UIFont(name: "Quicksand-Medium", size: 14)!,
+                                   textColor: .white,
+                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
+        marker.chartView = chartView
+        marker.chartView?.layer.cornerRadius = 10
+        marker.chartView?.layer.masksToBounds = true
+        marker.minimumSize = CGSize(width: 70, height: 20)
+        chartView.marker = marker
       
         let values = chartValues.enumerated().map { (index, data) -> ChartDataEntry in
             return ChartDataEntry(x: Double(index), y: data)
@@ -55,6 +67,8 @@ class ChartView: ChartViewDelegate {
         dataSet.drawIconsEnabled = false
         dataSet.setColor(UIColor.white.withAlphaComponent(0.35))
         dataSet.setCircleColor(.clear)
+        dataSet.drawVerticalHighlightIndicatorEnabled = true
+        dataSet.highlightColor = ChartColorTemplates.colorFromString("#4DACDD").withAlphaComponent(0.5)
         
         let gradientColors = [ChartColorTemplates.colorFromString("#102957").cgColor,
                               ChartColorTemplates.colorFromString("#E5276A").cgColor]

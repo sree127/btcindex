@@ -25,6 +25,14 @@
 		5EFD4AA91FE1109700C294B4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AA81FE1109700C294B4 /* Router.swift */; };
 		5EFD4AAB1FE144F700C294B4 /* LineChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */; };
 		5EFD4AAD1FE166AC00C294B4 /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */; };
+		5EFD4AB41FE16C3000C294B4 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAF1FE16C3000C294B4 /* Quicksand-Bold.ttf */; };
+		5EFD4AB51FE16C3000C294B4 /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB01FE16C3000C294B4 /* Futura.ttc */; };
+		5EFD4AB61FE16C3000C294B4 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB11FE16C3000C294B4 /* Quicksand-Medium.ttf */; };
+		5EFD4AB71FE16C3000C294B4 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB21FE16C3000C294B4 /* Quicksand-Regular.ttf */; };
+		5EFD4AB81FE16C3000C294B4 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB31FE16C3000C294B4 /* Quicksand-Light.ttf */; };
+		5EFD4ABA1FE1708100C294B4 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB91FE1708100C294B4 /* Authentication.swift */; };
+		5EFD4ABC1FE18A8B00C294B4 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4ABB1FE18A8B00C294B4 /* BalloonMarker.swift */; };
+		5EFD4ABE1FE18F4800C294B4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4ABD1FE18F4800C294B4 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +94,14 @@
 		5EFD4AA81FE1109700C294B4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
 		5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
+		5EFD4AAF1FE16C3000C294B4 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		5EFD4AB01FE16C3000C294B4 /* Futura.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Futura.ttc; sourceTree = "<group>"; };
+		5EFD4AB11FE16C3000C294B4 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		5EFD4AB21FE16C3000C294B4 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		5EFD4AB31FE16C3000C294B4 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		5EFD4AB91FE1708100C294B4 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5EFD4ABB1FE18A8B00C294B4 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		5EFD4ABD1FE18F4800C294B4 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +149,7 @@
 		5EFD4A501FE02EFD00C294B4 /* BTCIndex */ = {
 			isa = PBXGroup;
 			children = (
+				5EFD4AAE1FE16C3000C294B4 /* Fonts */,
 				5EFD4AA71FE1109200C294B4 /* Router */,
 				5EFD4A961FE0F5E700C294B4 /* Views */,
 				5EFD4A7B1FE035BC00C294B4 /* Controllers */,
@@ -178,6 +195,7 @@
 		5EFD4A781FE035BC00C294B4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5EFD4ABD1FE18F4800C294B4 /* Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				5EFD4A7F1FE037B000C294B4 /* NetworkManager.swift */,
+				5EFD4AB91FE1708100C294B4 /* Authentication.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -224,6 +243,7 @@
 		5EFD4A971FE0F5F300C294B4 /* Chart View */ = {
 			isa = PBXGroup;
 			children = (
+				5EFD4ABB1FE18A8B00C294B4 /* BalloonMarker.swift */,
 				5EFD4A981FE0F60400C294B4 /* ChartView.swift */,
 			);
 			path = "Chart View";
@@ -244,6 +264,18 @@
 				5EFD4AA81FE1109700C294B4 /* Router.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		5EFD4AAE1FE16C3000C294B4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD4AAF1FE16C3000C294B4 /* Quicksand-Bold.ttf */,
+				5EFD4AB01FE16C3000C294B4 /* Futura.ttc */,
+				5EFD4AB11FE16C3000C294B4 /* Quicksand-Medium.ttf */,
+				5EFD4AB21FE16C3000C294B4 /* Quicksand-Regular.ttf */,
+				5EFD4AB31FE16C3000C294B4 /* Quicksand-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +392,12 @@
 			files = (
 				5EFD4A5C1FE02EFD00C294B4 /* LaunchScreen.storyboard in Resources */,
 				5EFD4A591FE02EFD00C294B4 /* Assets.xcassets in Resources */,
+				5EFD4AB71FE16C3000C294B4 /* Quicksand-Regular.ttf in Resources */,
 				5EFD4A571FE02EFD00C294B4 /* Main.storyboard in Resources */,
+				5EFD4AB41FE16C3000C294B4 /* Quicksand-Bold.ttf in Resources */,
+				5EFD4AB51FE16C3000C294B4 /* Futura.ttc in Resources */,
+				5EFD4AB61FE16C3000C294B4 /* Quicksand-Medium.ttf in Resources */,
+				5EFD4AB81FE16C3000C294B4 /* Quicksand-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,12 +435,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFD4ABA1FE1708100C294B4 /* Authentication.swift in Sources */,
 				5EFD4A801FE037B000C294B4 /* NetworkManager.swift in Sources */,
 				5EFD4A521FE02EFD00C294B4 /* AppDelegate.swift in Sources */,
 				5EFD4A821FE0498100C294B4 /* PriceIndex.swift in Sources */,
 				5EFD4A991FE0F60400C294B4 /* ChartView.swift in Sources */,
+				5EFD4ABE1FE18F4800C294B4 /* Helper.swift in Sources */,
 				5EFD4AA91FE1109700C294B4 /* Router.swift in Sources */,
 				5EFD4A7E1FE035F700C294B4 /* DashboardViewController.swift in Sources */,
+				5EFD4ABC1FE18A8B00C294B4 /* BalloonMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import QuartzCore
 
 class DashboardViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var lowPriceLabel: UILabel!
     @IBOutlet weak var lineCharView: LineChartView!
     @IBOutlet var buttonCollection: [UIButton]!
+    @IBOutlet weak var btcImageView: UIImageView!
     
     var selectedButtonTag = 2
     var priceIndices: PriceIndices? {
@@ -39,6 +41,11 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.btcImageView.rotateView()
+    }
+    
     func drawChartView(period: HistoryPeriod) {
         changeButtonStates()
         var chartValues: [Double] = [Double]()
@@ -53,6 +60,7 @@ class DashboardViewController: UIViewController {
         
         let chartView = ChartView(chartView: lineCharView, chartValues: chartValues)
         chartView.drawLineChart()
+        self.btcImageView.removeAllAnimations()
     }
     
     func setPriceIndices() {
