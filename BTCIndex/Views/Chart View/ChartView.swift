@@ -56,7 +56,7 @@ class ChartView: ChartViewDelegate {
         dataSet.setColor(UIColor.white.withAlphaComponent(0.35))
         dataSet.setCircleColor(.clear)
         
-        let gradientColors = [ChartColorTemplates.colorFromString("#0B2551").cgColor,
+        let gradientColors = [ChartColorTemplates.colorFromString("#102957").cgColor,
                               ChartColorTemplates.colorFromString("#E5276A").cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
         dataSet.fillAlpha = 1
