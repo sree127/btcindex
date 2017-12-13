@@ -11,7 +11,6 @@
 		5EFD4A571FE02EFD00C294B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A551FE02EFD00C294B4 /* Main.storyboard */; };
 		5EFD4A591FE02EFD00C294B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A581FE02EFD00C294B4 /* Assets.xcassets */; };
 		5EFD4A5C1FE02EFD00C294B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4A5A1FE02EFD00C294B4 /* LaunchScreen.storyboard */; };
-		5EFD4A731FE0306E00C294B4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A721FE0306E00C294B4 /* CryptoSwift.framework */; };
 		5EFD4A7E1FE035F700C294B4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A7D1FE035F700C294B4 /* DashboardViewController.swift */; };
 		5EFD4A801FE037B000C294B4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A7F1FE037B000C294B4 /* NetworkManager.swift */; };
 		5EFD4A821FE0498100C294B4 /* PriceIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A811FE0498100C294B4 /* PriceIndex.swift */; };
@@ -19,9 +18,6 @@
 		5EFD4A851FE05B9900C294B4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A7F1FE037B000C294B4 /* NetworkManager.swift */; };
 		5EFD4A861FE05D8C00C294B4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A721FE0306E00C294B4 /* CryptoSwift.framework */; };
 		5EFD4A991FE0F60400C294B4 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4A981FE0F60400C294B4 /* ChartView.swift */; };
-		5EFD4A9B1FE104B800C294B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A9A1FE104B800C294B4 /* Charts.framework */; };
-		5EFD4A9C1FE1052300C294B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A9A1FE104B800C294B4 /* Charts.framework */; };
-		5EFD4A9D1FE1052300C294B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A9A1FE104B800C294B4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EFD4AA91FE1109700C294B4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AA81FE1109700C294B4 /* Router.swift */; };
 		5EFD4AAB1FE144F700C294B4 /* LineChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */; };
 		5EFD4AAD1FE166AC00C294B4 /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAC1FE166AC00C294B4 /* DashboardTests.swift */; };
@@ -37,6 +33,9 @@
 		5EFD4AC21FE1AE9400C294B4 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AB91FE1708100C294B4 /* Authentication.swift */; };
 		5EFD4AC31FE1AEA000C294B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AC01FE1A5DD00C294B4 /* Constants.swift */; };
 		5EFD4AC51FE1B88200C294B4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4AC41FE1B88200C294B4 /* Readme.md */; };
+		5EFD4AC61FE1BC7C00C294B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4AA41FE1058B00C294B4 /* Charts.framework */; };
+		5EFD4AC71FE1BC7C00C294B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4AA41FE1058B00C294B4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EFD4ACB1FE1BC8B00C294B4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A721FE0306E00C294B4 /* CryptoSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,16 +60,23 @@
 			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
 			remoteInfo = ChartsTests;
 		};
+		5EFD4AC81FE1BC7C00C294B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5EFD4A941FE0F41800C294B4 /* Embed Frameworks */ = {
+		5EFD4ACA1FE1BC7C00C294B4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5EFD4A9D1FE1052300C294B4 /* Charts.framework in Embed Frameworks */,
+				5EFD4AC71FE1BC7C00C294B4 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,9 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EFD4A9C1FE1052300C294B4 /* Charts.framework in Frameworks */,
-				5EFD4A9B1FE104B800C294B4 /* Charts.framework in Frameworks */,
-				5EFD4A731FE0306E00C294B4 /* CryptoSwift.framework in Frameworks */,
+				5EFD4ACB1FE1BC8B00C294B4 /* CryptoSwift.framework in Frameworks */,
+				5EFD4AC61FE1BC7C00C294B4 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,11 +302,12 @@
 				5EFD4A4B1FE02EFD00C294B4 /* Frameworks */,
 				5EFD4A4C1FE02EFD00C294B4 /* Resources */,
 				5EFD4A771FE030C300C294B4 /* ShellScript */,
-				5EFD4A941FE0F41800C294B4 /* Embed Frameworks */,
+				5EFD4ACA1FE1BC7C00C294B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5EFD4AC91FE1BC7C00C294B4 /* PBXTargetDependency */,
 			);
 			name = BTCIndex;
 			productName = BTCIndex;
@@ -478,6 +484,11 @@
 			target = 5EFD4A4D1FE02EFD00C294B4 /* BTCIndex */;
 			targetProxy = 5EFD4A631FE02EFD00C294B4 /* PBXContainerItemProxy */;
 		};
+		5EFD4AC91FE1BC7C00C294B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 5EFD4AC81FE1BC7C00C294B4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -503,6 +514,7 @@
 		5EFD4A691FE02EFD00C294B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -561,6 +573,7 @@
 		5EFD4A6A1FE02EFD00C294B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
