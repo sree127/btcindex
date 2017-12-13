@@ -13,11 +13,11 @@ import Charts
 class ChartView: ChartViewDelegate {
     
     let chartView: LineChartView
-    let historyData: [History]
-
-    init(chartView: LineChartView, historyData: [History]) {
+    let chartValues: [Double]
+    
+    init(chartView: LineChartView, chartValues: [Double]) {
         self.chartView = chartView
-        self.historyData = historyData
+        self.chartValues = chartValues
     }
     
     func drawLineChart() {
@@ -44,8 +44,9 @@ class ChartView: ChartViewDelegate {
         rightAxis.drawGridLinesEnabled = false
         rightAxis.axisLineColor = .clear
 
-        let values = historyData.enumerated().map { (index, data) -> ChartDataEntry in
-            return ChartDataEntry(x: Double(index), y: data.average)
+      
+        let values = chartValues.enumerated().map { (index, data) -> ChartDataEntry in
+            return ChartDataEntry(x: Double(index), y: data)
         }
         let dataSet = LineChartDataSet(values: values, label: nil)
         dataSet.lineWidth = 1

@@ -46,12 +46,60 @@ struct Changes: Decodable {
 
 
 /// For Graph
-struct History: Decodable {
+struct MonthlyHistory: Codable {
+    var high: Double
+    var open: Double
+    var time: String
+    var average: Double
+    var low: Double
+}
+
+struct DailyHistory: Codable {
+    var time: String
+    var average: Double
+}
+
+struct AllTimeHistory: Codable {
     var high: Double?
     var open: Double?
     var time: String
     var average: Double
     var volume: Double?
     var low: Double?
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        average = try container.decode(Double.self, forKey: CodingKeys.average)
+        time = try container.decode(String.self, forKey: CodingKeys.time)
+        // First check for a Double
+        do {
+            open = try container.decode(Double.self, forKey: CodingKeys.open)
+        } catch DecodingError.typeMismatch {
+            if let typeValue = Double(try container.decode(String.self, forKey: CodingKeys.open)) {
+                open = typeValue
+            }
+        }
+        do {
+            high = try container.decode(Double.self, forKey: CodingKeys.high)
+        } catch DecodingError.typeMismatch {
+            if let typeValue = Double(try container.decode(String.self, forKey: CodingKeys.high)) {
+                high = typeValue
+            }
+        }
+        do {
+            low = try container.decode(Double.self, forKey: CodingKeys.low)
+        } catch DecodingError.typeMismatch {
+            if let typeValue = Double(try container.decode(String.self, forKey: CodingKeys.low)) {
+                low = typeValue
+            }
+        }
+        do {
+            volume = try container.decode(Double.self, forKey: CodingKeys.volume)
+        } catch DecodingError.typeMismatch {
+            if let typeValue = Double(try container.decode(String.self, forKey: CodingKeys.volume)) {
+                volume = typeValue
+            }
+        }
+    }
 }
 

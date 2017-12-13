@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let router = Router(window: window)
+        router.getPriceIndices()
+        router.getHistoryData(period: .daily)
+        router.getHistoryData(period: .monthly)
+        router.getHistoryData(period: .alltime)
         return true
     }
 

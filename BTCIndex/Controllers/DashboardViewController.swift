@@ -19,80 +19,65 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var lowPriceLabel: UILabel!
     
     @IBOutlet weak var lineCharView: LineChartView!
+
+    var priceIndices: PriceIndices? {
+        didSet {
+            self.setPriceIndices()
+        }
+    }
     
+    /// HistoryData
+    var monthlyHistoryData: [MonthlyHistory] = [] {
+        didSet {
+            drawChartView(period: .monthly)
+        }
+    }
+    var dailyHistoryData: [DailyHistory] = [DailyHistory]()
+    var allTimeHistoryData: [AllTimeHistory] = [AllTimeHistory]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPriceIndex()
-        getHistoryData()
     }
     
-    func getPriceIndex() {
-        let networkManager = NetworkManager(session: URLSession(configuration: .default), url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!, isHeaderRequired: true)
-        networkManager.get() { [weak weakSelf = self] (data, error) in
-            guard let data = data else {
-                print("error =", error?.localizedDescription ?? "")
-                return
-            }
-            do {
-                let jsonDecoder = JSONDecoder()
-                let priceIndices = try jsonDecoder.decode(PriceIndices.self, from: data)
-                DispatchQueue.main.async {
-                    weakSelf?.setPriceIndices(priceIndices: priceIndices)
-                }
-            //    print(priceIndices)
-            } catch let jsonError {
-                print(jsonError)
-            }
+    func drawChartView(period: HistoryPeriod) {
+        var chartValues: [Double] = [Double]()
+        switch period {
+        case .daily:
+            chartValues = dailyHistoryData.flatMap({ $0.average })
+        case .monthly:
+            chartValues = monthlyHistoryData.flatMap({ $0.average })
+        case .alltime:
+            chartValues = allTimeHistoryData.flatMap({ $0.average })
         }
+        
+        let chartView = ChartView(chartView: lineCharView, chartValues: chartValues)
+        chartView.drawLineChart()
+        
+        print("ALL chartValues ****", chartValues)
     }
     
-    func getHistoryData() {
-        let networkManager = NetworkManager(session: URLSession(configuration: .default), url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/history/BTCUSD?period=daily&?format=json")!, isHeaderRequired: false)
-        networkManager.get() { (data, error) in
-            guard let data = data else {
-                print("error =", error?.localizedDescription ?? "")
-                return
-            }
-            do {
-                if let dataSerialised = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [[String: Any]] {
-                    let value =  dataSerialised.enumerated().map({ (offset, element) -> History? in
-                        return self.getHistoryType(data: element)
-                    })
-                    print("data ***", value)
-                    if let value = value as? [History] {
-                        let chartView = ChartView(chartView: self.lineCharView, historyData: value)
-                        DispatchQueue.main.async {
-                            chartView.drawLineChart()
-                        }
-                    }
-                }
-            } catch let jsonError {
-                print(jsonError)
-            }
-        }
-    }
-    
-    func getHistoryType(data: [String: Any]) -> History? {
-        let historyData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-        do {
-            let history = try JSONDecoder().decode(History.self, from: historyData!)
-            return history
-        } catch {
-            print("Error")
-        }
-        return nil
-    }
-    
-    
-    func setPriceIndices(priceIndices: PriceIndices) {
-        self.currentPriceLabel.text = String(describing: priceIndices.last)
-        self.openPriceLabel.text = String(describing: priceIndices.open.day)
-        self.highPriceLabel.text = String(describing: priceIndices.high)
-        self.lowPriceLabel.text = String(describing: priceIndices.low)
+    func setPriceIndices() {
+        self.currentPriceLabel.text = String(describing: priceIndices?.last ?? 0)
+        self.openPriceLabel.text = String(describing: priceIndices?.open.day ?? 0)
+        self.highPriceLabel.text = String(describing: priceIndices?.high ?? 0)
+        self.lowPriceLabel.text = String(describing: priceIndices?.low ?? 0)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func monthlyPressed(_ sender: Any) {
+        drawChartView(period: .monthly)
+    }
+    
+    @IBAction func dailyPressed(_ sender: Any) {
+        drawChartView(period: .daily)
+    }
+    
+    @IBAction func allTimePressed(_ sender: Any) {
+        drawChartView(period: .alltime)
+    }
+    
 }
