@@ -24,6 +24,7 @@
 		5EFD4A9C1FE1052300C294B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A9A1FE104B800C294B4 /* Charts.framework */; };
 		5EFD4A9D1FE1052300C294B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD4A9A1FE104B800C294B4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EFD4AA91FE1109700C294B4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AA81FE1109700C294B4 /* Router.swift */; };
+		5EFD4AAB1FE144F700C294B4 /* LineChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		5EFD4A9A1FE104B800C294B4 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		5EFD4A9E1FE1058A00C294B4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		5EFD4AA81FE1109700C294B4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				5EFD4A661FE02EFD00C294B4 /* BTCIndexTests.swift */,
 				5EFD4A681FE02EFD00C294B4 /* Info.plist */,
+				5EFD4AAA1FE144F700C294B4 /* LineChartTests.swift */,
 				5EFD4A831FE04E2100C294B4 /* NetworkManagerTests.swift */,
 			);
 			path = BTCIndexTests;
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFD4AAB1FE144F700C294B4 /* LineChartTests.swift in Sources */,
 				5EFD4A851FE05B9900C294B4 /* NetworkManager.swift in Sources */,
 				5EFD4A841FE04E2100C294B4 /* NetworkManagerTests.swift in Sources */,
 				5EFD4A671FE02EFD00C294B4 /* BTCIndexTests.swift in Sources */,

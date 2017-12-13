@@ -22,6 +22,7 @@ class Router {
     init(window: UIWindow?) {
         self.window = window
         self.setDashboardVC()
+        self.startTimer()
     }
     
     func setDashboardVC() {
@@ -31,7 +32,7 @@ class Router {
     }
     
     /// Get current day price index
-    func getPriceIndices() {
+    @objc func getPriceIndices() {
         let networkManager = NetworkManager(session: URLSession(configuration: .default), url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!, isHeaderRequired: true)
         networkManager.get() { (data, error) in
             guard let data = data else {
@@ -122,5 +123,10 @@ class Router {
             print("Error")
         }
         return nil
+    }
+    
+    func startTimer() {
+        let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.getPriceIndices), userInfo: nil, repeats: true)
+        timer.fire()
     }
 }

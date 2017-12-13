@@ -22,7 +22,6 @@ class DashboardViewController: UIViewController {
     var selectedButtonTag = 2
     var priceIndices: PriceIndices? {
         didSet {
-            print("INDICESSS ****", priceIndices)
             self.setPriceIndices()
         }
     }
@@ -57,7 +56,7 @@ class DashboardViewController: UIViewController {
     }
     
     func setPriceIndices() {
-        self.currentPriceLabel.text = String(describing: priceIndices?.last ?? 0)
+        self.currentPriceLabel.text = "$" +  String(describing: priceIndices?.last ?? 0)
         self.openPriceLabel.text = String(describing: priceIndices?.open.day ?? 0)
         self.highPriceLabel.text = String(describing: priceIndices?.high ?? 0)
         self.lowPriceLabel.text = String(describing: priceIndices?.low ?? 0)
