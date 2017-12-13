@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+/// MARK:- RotationAnimation
+/// Protocl for 3D rotation -> Flips the coin
 let kRotationAnimationKey = "com.btc.rotationanimationkey"
 
 protocol RotationAnimation {
@@ -16,6 +18,7 @@ protocol RotationAnimation {
     func removeAllAnimations()
 }
 
+/// Applying the protocol only to UIViews
 extension RotationAnimation where Self: UIView {
     func rotateView() {
         if self.layer.animation(forKey: kRotationAnimationKey) == nil {

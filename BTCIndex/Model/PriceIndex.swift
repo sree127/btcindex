@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// Model class for Codable PriceIndices and Historical Data
+
+/// PriceIndices
 struct PriceIndices: Decodable {
     let ask : Double
     let bid : Double
@@ -45,7 +48,7 @@ struct Changes: Decodable {
 }
 
 
-/// For Graph
+/// For Historical Data - Daily, Monthly & Alltime
 struct MonthlyHistory: Codable {
     var high: Double
     var open: Double
@@ -59,6 +62,9 @@ struct DailyHistory: Codable {
     var average: Double
 }
 
+/// Using manual coding keys because the API response for AllTime data sometimes doensn't include
+/// some keys and also the Double Values gets mapped to String values
+/// Data mapping solved using try-catch blocks
 struct AllTimeHistory: Codable {
     var high: Double?
     var open: Double?

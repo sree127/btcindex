@@ -9,18 +9,25 @@
 import Foundation
 import CryptoSwift
 
-final class Authentication {
+/// Authentication
+/// Computes the digest value --> HMAC
+/// Uses CryptoSwift for HMAC computation
+/// Inital payload created using timestamp in epoch & the public key
+/// Public Key and Secret Key are defined in Constants
+/// Ultimately the signature header is created using the digest and the payload
+
+class Authentication {
     
     private var timeStamp: Int {
         return Int(Date().timeIntervalSince1970)
     }
     
     private var publicKey: String {
-        return "OWE3YzJkMzlhNGIxNDllYzk1NWYwMDE1NzQ2NWM2ZTU"
+        return Constants.Keys.publicKey
     }
     
     private var secretKey: String {
-        return "MmY2YTU2YTY3NDljNDFiOTkzYzY1ODY0MWQ4MzRiNTQwNjhiNTVmZDYyYTg0ZjljYWRjMWE1NGNkNjljYTViZA"
+        return Constants.Keys.secretkey
     }
     
     private var payload: String {

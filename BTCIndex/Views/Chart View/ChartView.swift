@@ -6,6 +6,10 @@
 //  Copyright © 2017 Sreejith N. All rights reserved.
 //
 
+/// Chartview
+/// Takes LineChartView from Dashboard as DI (Dependency Injection) and also the [Double] values which are
+/// used to plot the LineChart graph
+
 import Foundation
 import UIKit
 import Charts
@@ -57,6 +61,7 @@ class ChartView: ChartViewDelegate {
         marker.minimumSize = CGSize(width: 70, height: 20)
         chartView.marker = marker
       
+        /// Add LineChart Dataset
         let values = chartValues.enumerated().map { (index, data) -> ChartDataEntry in
             return ChartDataEntry(x: Double(index), y: data)
         }
@@ -70,6 +75,7 @@ class ChartView: ChartViewDelegate {
         dataSet.drawVerticalHighlightIndicatorEnabled = true
         dataSet.highlightColor = ChartColorTemplates.colorFromString("#4DACDD").withAlphaComponent(0.5)
         
+        /// Setting the gradient colours
         let gradientColors = [ChartColorTemplates.colorFromString("#102957").cgColor,
                               ChartColorTemplates.colorFromString("#E5276A").cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
@@ -77,6 +83,8 @@ class ChartView: ChartViewDelegate {
         dataSet.fill = Fill(linearGradient: gradient, angle: 90) //.linearGradient(gradient, angle: 90)
         dataSet.drawFilledEnabled = true
         let data = LineChartData(dataSet: dataSet)
+        
+        /// Setting the data to chartview
         chartView.data = data
     }
 }

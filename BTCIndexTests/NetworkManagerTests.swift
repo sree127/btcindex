@@ -34,7 +34,7 @@ class NetworkManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        networkManager = NetworkManager(session: session, url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!, isHeaderRequired: false)
+        networkManager = NetworkManager(session: session, url: URL(string: "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD")!, isSignatureNeeded: false)
     }
     
     func testRequestsTheURL() {
@@ -58,10 +58,10 @@ class NetworkManagerTests: XCTestCase {
     
     func testPublicAndPrivateKey() {
         let publicKey = "OWE3YzJkMzlhNGIxNDllYzk1NWYwMDE1NzQ2NWM2ZTU"
-        XCTAssertEqual(publicKey, networkManager.publicKey)
+        XCTAssertEqual(publicKey, Constants.Keys.publicKey)
         
         let privateKey = "MmY2YTU2YTY3NDljNDFiOTkzYzY1ODY0MWQ4MzRiNTQwNjhiNTVmZDYyYTg0ZjljYWRjMWE1NGNkNjljYTViZA"
-        XCTAssertEqual(privateKey, networkManager.secretKey)
+        XCTAssertEqual(privateKey, Constants.Keys.secretkey)
     }
     
     

@@ -21,14 +21,17 @@ class DashboardViewController: UIViewController {
     @IBOutlet var buttonCollection: [UIButton]!
     @IBOutlet weak var btcImageView: UIImageView!
     
+    /// Selector to identify the button press
     var selectedButtonTag = 2
+    
+    /// Price Indices Model --> Gets populated initially from the Router Class
     var priceIndices: PriceIndices? {
         didSet {
             self.setPriceIndices()
         }
     }
     
-    /// HistoryData
+    /// Histoical Data from the API --> Gets populated throug DI from the Router Class
     var monthlyHistoryData: [MonthlyHistory] = [MonthlyHistory]()
     var allTimeHistoryData: [AllTimeHistory] = [AllTimeHistory]()
     var dailyHistoryData: [DailyHistory] = [] {
@@ -37,15 +40,19 @@ class DashboardViewController: UIViewController {
         }
     }
 
+    /// Did Load VC
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        /// Cute little animation to rorate the image 3D --> Please check Helper class for implementation
         self.btcImageView.rotateView()
     }
     
+    /// Method which pass the [Dobule] values to chartview
     func drawChartView(period: HistoryPeriod) {
         changeButtonStates()
         var chartValues: [Double] = [Double]()
@@ -58,16 +65,18 @@ class DashboardViewController: UIViewController {
             chartValues = allTimeHistoryData.flatMap({ $0.average })
         }
         
+        /// Pass lineCharView along with the [Double] values
         let chartView = ChartView(chartView: lineCharView, chartValues: chartValues)
         chartView.drawLineChart()
         self.btcImageView.removeAllAnimations()
     }
     
+    /// UI Method to assign all the labels with PriceIndices values
     func setPriceIndices() {
-        self.currentPriceLabel.text = "$" +  String(describing: priceIndices?.last ?? 0)
-        self.openPriceLabel.text = String(describing: priceIndices?.open.day ?? 0)
-        self.highPriceLabel.text = String(describing: priceIndices?.high ?? 0)
-        self.lowPriceLabel.text = String(describing: priceIndices?.low ?? 0)
+        self.currentPriceLabel.text = "$" + String(describing: priceIndices?.last ?? 0)
+        self.openPriceLabel.text = "$" + String(describing: priceIndices?.open.day ?? 0)
+        self.highPriceLabel.text = "$" + String(describing: priceIndices?.high ?? 0)
+        self.lowPriceLabel.text = "$" + String(describing: priceIndices?.low ?? 0)
         let changeInPrice = priceIndices?.changes.price.day ?? 0.0
         let changeInPercentage = priceIndices?.changes.percent.day ?? 0.0
         let changePriceString = String(describing: changeInPrice) + " (\(String(describing: changeInPercentage))%)"
@@ -80,6 +89,8 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// Button Action Methods
+    //MARK:- Button Actions
     @IBAction func monthlyPressed(_ sender: Any) {
         selectedButtonTag = 1
         drawChartView(period: .monthly)
@@ -95,6 +106,7 @@ class DashboardViewController: UIViewController {
         drawChartView(period: .alltime)
     }
     
+    /// Change Button states depending on Button Press
     func changeButtonStates() {
         for button in buttonCollection {
             button.setTitleColor(button.tag == selectedButtonTag ? ChartColorTemplates.colorFromString("#E5276A") : ChartColorTemplates.colorFromString("#625E9A"), for: .normal)
