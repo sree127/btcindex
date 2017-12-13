@@ -13,8 +13,12 @@ class NetworkManager {
     
     typealias completion = (_ data: Data?, _ error: Error?) -> ()
     private let session: URLSession
-    init(session: URLSession) {
+    private let url: URL
+    private let isHeaderRequired: Bool
+    init(session: URLSession, url: URL, isHeaderRequired: Bool) {
         self.session = session
+        self.url = url
+        self.isHeaderRequired = isHeaderRequired
     }
     
     private var timeStamp: Int {
@@ -41,14 +45,20 @@ class NetworkManager {
     private var signatureHeader: String {
         return payload + "." + digest
     }
-
-    func getCurrentPrice(url: URL, callback: @escaping completion) {
+    
+    private var urlRequest: URLRequest {
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-        request.setValue(signatureHeader, forHTTPHeaderField: "X-signature")
         request.httpMethod = "GET"
-        let task = session.dataTask(with: request) { (data, _, error) in
+        if isHeaderRequired {
+            request.setValue(signatureHeader, forHTTPHeaderField: "X-signature")
+        }
+        return request
+    }
+
+    func get(callback: @escaping completion) {
+        let task = session.dataTask(with: urlRequest) { (data, _, error) in
             switch (data, error) {
             case (_, let error?):
                 print("Error **", error.localizedDescription)

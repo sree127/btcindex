@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PriceIndices: Codable {
+struct PriceIndices: Decodable {
     let ask : Double
     let bid : Double
     let last : Double
@@ -23,13 +23,13 @@ struct PriceIndices: Codable {
     let display_timestamp : String
 }
 
-struct Averages: Codable {
+struct Averages: Decodable {
     let day : Double
     let week : Double
     let month : Double
 }
 
-struct Open: Codable {
+struct Open: Decodable {
     var day: Double
     var hour: Double
     var month: Double
@@ -39,7 +39,19 @@ struct Open: Codable {
     var year: Double
 }
 
-struct Changes: Codable {
+struct Changes: Decodable {
     var percent: Open
     var price: Open
 }
+
+
+/// For Graph
+struct History: Decodable {
+    var high: Double?
+    var open: Double?
+    var time: String
+    var average: Double
+    var volume: Double?
+    var low: Double?
+}
+
