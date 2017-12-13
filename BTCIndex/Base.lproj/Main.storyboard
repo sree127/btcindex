@@ -10,11 +10,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Bold</string>
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BTCIndex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" id="BYZ-38-t0r" customClass="DashboardViewController" customModule="BTCIndex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="494" width="375" height="284"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pmv-yH-IcL">
-                                        <rect key="frame" x="10" y="234" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="219" width="355" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-XY-RdA">
                                                 <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="50"/>
@@ -94,12 +100,28 @@
                                             <constraint firstAttribute="height" constant="50" id="znb-OT-Tcd"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$199001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZu-lY-WV9">
+                                        <rect key="frame" x="135.66666666666666" y="40" width="102.66666666666666" height="28.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-Mw-Ifp">
+                                        <rect key="frame" x="168.66666666666666" y="76.666666666666629" width="37" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="textColor" red="0.85098039219999999" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.14509803921568626" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Tic-Mw-Ifp" firstAttribute="top" secondItem="sZu-lY-WV9" secondAttribute="bottom" constant="8" id="BMr-ZE-s0I"/>
                                     <constraint firstAttribute="trailing" secondItem="pmv-yH-IcL" secondAttribute="trailing" constant="10" id="Gox-BZ-8S6"/>
-                                    <constraint firstAttribute="bottom" secondItem="pmv-yH-IcL" secondAttribute="bottom" id="LJ7-WR-LWH"/>
+                                    <constraint firstAttribute="bottom" secondItem="pmv-yH-IcL" secondAttribute="bottom" constant="15" id="LJ7-WR-LWH"/>
+                                    <constraint firstItem="sZu-lY-WV9" firstAttribute="top" secondItem="dGS-r3-KHN" secondAttribute="top" constant="40" id="O1l-yv-oNh"/>
+                                    <constraint firstItem="sZu-lY-WV9" firstAttribute="centerX" secondItem="dGS-r3-KHN" secondAttribute="centerX" id="eHR-jj-00G"/>
                                     <constraint firstItem="pmv-yH-IcL" firstAttribute="leading" secondItem="dGS-r3-KHN" secondAttribute="leading" constant="10" id="rw9-fE-W3Z"/>
+                                    <constraint firstItem="Tic-Mw-Ifp" firstAttribute="centerX" secondItem="dGS-r3-KHN" secondAttribute="centerX" id="w4a-O9-bKm"/>
                                 </constraints>
                             </view>
                         </subviews>
