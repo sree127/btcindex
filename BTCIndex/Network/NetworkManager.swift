@@ -65,12 +65,10 @@ class NetworkManager {
         let task = session.dataTaskWithURLRequest(urlRequest: urlRequest) { (data, _, error) in
             switch (data, error) {
             case (_, let error?):
-                print("Error **", error.localizedDescription)
                 callback(nil, error)
             case (let data?, _):
                 callback(data, nil)
             case (nil, nil):
-                print("error")
                 callback(nil, nil)
             }
         }

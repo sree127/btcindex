@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Constants
 struct Constants {
     struct API {
         static let endpoint = "https://apiv2.bitcoinaverage.com/indices/global/"
