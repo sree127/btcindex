@@ -17,7 +17,7 @@ API's used: :+1:
  * Price Indices -> https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD
  * Historical Data -> https://apiv2.bitcoinaverage.com/indices/global/history/BTCUSD?period=daily&?format=json
 ```
-<br>
+
 #### Dependencies:
  Used Carthage to manage the dependencies. 
  
