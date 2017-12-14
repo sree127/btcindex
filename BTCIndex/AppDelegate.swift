@@ -12,16 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var router: Router?
+    
     /// Once loaded, Router class is initiated with UIWindow property
     /// All the API calls are made using the router object which then routes the results to Dashboard controller
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let router = Router(window: window)
-        router.getPriceIndices()
-        router.getHistoryData(period: .daily)
-        router.getHistoryData(period: .monthly)
-        router.getHistoryData(period: .alltime)
+        router = Router(window: window)
+        router?.getPriceIndices()
+        router?.getHistoryData(period: .daily)
+        router?.getHistoryData(period: .monthly)
+        router?.getHistoryData(period: .alltime)
         return true
     }
 
@@ -37,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        router?.startTimer()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

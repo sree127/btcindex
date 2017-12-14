@@ -25,10 +25,12 @@ class Router {
     
     let window: UIWindow?
     var dashBoardVC: DashboardViewController?
+    var timer: Timer?
     init(window: UIWindow?) {
         self.window = window
         self.setDashboardVC()
         self.startTimer()
+        self.listenToAppStates()
     }
     
     /// Get the DashboardViewController from UIWindow rootViewController
@@ -139,9 +141,27 @@ class Router {
         return nil
     }
     
+    /// Listen to Application states
+    func listenToAppStates() {
+        let notificationCenter = NotificationCenter.default
+        /// Listen when the ApplicationMoves to background
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+    }
+    
     /// Timer scheduled to run every 3 seconds to fetch the Price Indices
     func startTimer() {
-        let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.getPriceIndices), userInfo: nil, repeats: true)
-        timer.fire()
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.getPriceIndices), userInfo: nil, repeats: true)
+        timer?.fire()
+    }
+    
+    /// Stop timer triggered when App Moves to background
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    /// Called when the Notification observer send the UIApplicationWillResignActive event
+    @objc func appMovedToBackground() {
+        stopTimer()
     }
 }

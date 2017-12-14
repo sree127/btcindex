@@ -43,7 +43,7 @@ API's used: :+1:
 
 #### Errors
 
-Compille Errors due to ````Charts module```` 
+If ran into compille errors due to ````Charts module```` 
 ````
 1. Drag the Charts.xcodeproj to your project
 2. Go to your target's settings, hit the "+" under the "Embedded Binaries" section, and select the Charts.framework
