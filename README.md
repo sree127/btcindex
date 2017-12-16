@@ -40,6 +40,8 @@ API's used: :+1:
 * iPhone 8
 * iPhone SE
 
+#### UI/UX design inspired from @iftikharshaikh_ :) :+1:
+* [Dribble](https://dribbble.com/shots/3886511-Trading-app-iPhone-x-2)
 
 #### Errors
 
